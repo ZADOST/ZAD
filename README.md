@@ -1,4 +1,4 @@
-# Hi, I'm Zadost
+# Hi, I'm Shazad
 ### Computer Education Student @ Tishk International University (TIU)
 
 Welcome to my personal portfolio repository! [cite_start]This project is part of my **CED 318 - Project Based Learning** course[cite: 1, 2]. It showcases my journey as a developer, highlighting my skills in frontend technologies and my leadership within the student community.
