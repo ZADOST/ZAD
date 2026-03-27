@@ -1,4 +1,14 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 0 20px;
+}
 
+/* Profile Image Styling */
 .profile-img {
     width: 150px;
     height: 150px;
@@ -9,15 +19,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #121212;
-    color: #e0e0e0;
-    padding: 0 20px;
-}
-
+/* Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -32,6 +34,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* Sections & Footer */
 section, footer {
     max-width: 800px;
     margin: 40px auto;
@@ -47,6 +50,7 @@ h2 {
     padding-bottom: 10px;
 }
 
+/* Lists (Skills) */
 ul {
     list-style: none;
     padding: 0;
@@ -62,6 +66,7 @@ li {
     font-size: 0.9rem;
 }
 
+/* Project Cards */
 .project-card {
     margin-bottom: 20px;
     padding: 15px;
@@ -75,6 +80,7 @@ li {
     border-color: #00adb5;
 }
 
+/* Links */
 a {
     color: #00adb5;
     text-decoration: none;
@@ -84,27 +90,9 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Mobile Responsiveness (Fixed syntax) */
 @media (max-width: 600px) {
     .hero h1 {
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #00adb5;
-    margin-bottom: 20px;
-    object-fit: cover; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #121212;
-    color: #e0e0e0;
-    padding: 0 20px;
-}
         font-size: 2rem;
     }
     
