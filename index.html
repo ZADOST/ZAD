@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shazad Hassan Babakr | Full Stack Developer & Multimedia Creator</title>
-    <!-- Corrected CSS Path based on your VS Code tree -->
+    <title>Shazad Hassan Babakr | Full Stack Developer</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header class="hero">
-        <!-- Corrected Image Path based on your VS Code tree -->
-        <img src="assets/img/mypic.jpg" alt="Shazad Hassan Babakr" class="profile-img">
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullScreenImg">
+        <div id="modalCaption">Shazad Hassan Babakr - Hosting at TIU</div>
+    </div>
+
+    <header class="hero fade-in-section">
+        <img src="assets/img/mypic.jpg" alt="Shazad Hassan Babakr" class="profile-img" id="heroImage" title="Click to view full screen">
         <h1>Hi! I'm Shazad Hassan Babakr</h1>
-        <p>Full Stack Mobile Application Developer | Multimedia Creator | Top-Performing Computer Education Student</p>
+        <p>Full Stack Mobile Application Developer | Multimedia Creator</p>
+        <p class="kstiu-role">CTO, Coordinator & Organizer of KSTIU</p>
+        
+        <div class="hero-actions">
+            <a href="https://kstiu.tiu.edu.iq/organizers" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fa-solid fa-id-card"></i> View My KSTIU Profile
+            </a>
+        </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="fade-in-section">
         <h2>About Me</h2>
         <p>
-            As a dedicated, top-performing Computer Education student at Tishk International University, I humbly blend a deep passion for full-stack software development with a strong creative background in multimedia storytelling. I strive to bridge technical complexity with user-centric visual design, drawing on my enriching experiences as the President of Kurdistan Students Talks (KSTIU) and my active role as the official host for major university events. 
+            As a dedicated, top-performing Computer Education student at Tishk International University, I humbly blend a deep passion for full-stack software development with a strong creative background in multimedia storytelling. I strive to bridge technical complexity with user-centric visual design, drawing on my enriching experiences leading Kurdistan Students Talks (KSTIU) and my active role as the official host for major university events. 
         </p>
         <p>
             My journey includes invaluable international experience through programs with DAAD and Brandenburg, leading to an awarded project at a conference in Cyprus, as well as an upcoming exchange semester at Universiti Teknologi Malaysia (UTM). Currently taking on a multifaceted professional role at ZAS TECH KRD, I am eager to contribute my diverse skill set to create impactful solutions while remaining grounded and open to continuous industry growth.
         </p>
-        <p><strong>Linguistic Proficiency:</strong> Native Kurdish, Fluent English, Intermediate Persian, Conversational Arabic, Beginner German & Turkish.</p>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="fade-in-section">
         <h2>Professional Experience</h2>
         
         <div class="experience-card">
@@ -51,69 +61,37 @@
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Expertise & Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Technical & Software</h3>
-                <ul>
-                    <li>Flutter & Dart</li>
-                    <li>PHP, HTML5, CSS3</li>
-                    <li>Java (OOP) & MySQL</li>
-                    <li>API Integration</li>
-                    <li>PC Architecture (Surface Laptop 3 Environment)</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Multimedia & Arts</h3>
-                <ul>
-                    <li>Videography & Editing</li>
-                    <li>Photography</li>
-                    <li>Graphic Design</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Leadership & Soft Skills</h3>
-                <ul>
-                    <li>Advanced Negotiation</li>
-                    <li>Event Organization</li>
-                    <li>Applied Educational Psychology</li>
-                    <li>Public Speaking</li>
-                </ul>
-            </div>
+    <section id="certifications-preview" class="fade-in-section">
+        <h2>Honors & Certifications</h2>
+        <p>Continuous learning and community involvement are the foundations of my professional journey. From advanced negotiation training with the American Council to debate leadership and cultural heritage digitization, I am dedicated to expanding my capabilities beyond the code.</p>
+        <div class="center-btn">
+            <a href="certificates.html" class="btn-secondary">
+                <i class="fa-solid fa-certificate"></i> View Certificate Gallery
+            </a>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="fade-in-section">
         <h2>Key Academic & Conference Projects</h2>
-        
         <div class="project-card">
             <h3>Smart Attendance Manager (NICE Competition)</h3>
             <p>Engineered a comprehensive Flutter/Dart mobile application utilizing QR code technology and robust offline capabilities to solve complex university monitorization needs.</p>
         </div>
-
         <div class="project-card">
             <h3>Offline Speech-to-Text AI Model (NYREC Conference)</h3>
             <p>Collaboratively developed an advanced, offline AI model integrated into a mobile framework, successfully pushing the boundaries of accessible technology.</p>
         </div>
-
-        <div class="project-card">
-            <h3>AI Web Tools Integration</h3>
-            <p>Engineered responsive web applications including an "AI Code Explainer" and "AI Joke Generator" utilizing PHP, backend API proxy services, and custom UI components.</p>
-        </div>
-
         <div class="project-card">
             <h3>KSTIU Web Architecture</h3>
             <p>Designed the full frontend UI/UX and architected the backend infrastructure to establish a robust digital presence for the university's largest student organization.</p>
         </div>
-
         <div class="project-card">
             <h3>Java & MySQL Accounting System</h3>
             <p>Architected a GUI-based desktop application utilizing Java OOP principles and MySQL Workbench to seamlessly manage and secure complex relational financial data.</p>
         </div>
     </section>
 
-    <footer id="contact">
+    <footer id="contact" class="fade-in-section">
         <h2>Connect With Me</h2>
         <div class="contact-links">
             <p><i class="fa-solid fa-envelope"></i> <a href="mailto:shazadhessen@gmail.com">shazadhessen@gmail.com</a></p>
@@ -124,5 +102,7 @@
         </div>
         <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">© 2026 Shazad Hassan Babakr. All Rights Reserved.</p>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
