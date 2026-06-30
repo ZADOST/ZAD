@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     // --- 1. SCROLL ANIMATION LOGIC (Intersection Observer) ---
-    // This finds all elements with the class 'fade-in-section' and makes them visible as you scroll.
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // Triggers when 15% of the element is visible
+        threshold: 0.15 
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once it has faded in
+                observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
@@ -21,36 +20,43 @@ document.addEventListener("DOMContentLoaded", function() {
     fadeElements.forEach(el => observer.observe(el));
 
 
-    // --- 2. IMAGE MODAL LOGIC (Lightbox) ---
-    // Grabs the modal elements
+    // --- 2. DYNAMIC MULTI-IMAGE MODAL LOGIC (Lightbox) ---
     const modal = document.getElementById("imageModal");
-    const img = document.getElementById("heroImage");
     const modalImg = document.getElementById("fullScreenImg");
+    const captionText = document.getElementById("modalCaption");
     const span = document.getElementsByClassName("close-modal")[0];
 
-    // When the user clicks on the profile picture, open the modal
-    if (img && modal) {
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src; // Uses the same image source
-            // Prevent scrolling on the body while modal is open
-            document.body.style.overflow = "hidden"; 
-        }
-    }
+    // Select the hero image AND all images inside the certificate grid
+    const clickableImages = document.querySelectorAll("#heroImage, .cert-img-container img");
 
-    // When the user clicks on <span> (x), close the modal
-    if (span) {
-        span.onclick = function() { 
-            modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Restore scrolling
-        }
-    }
+    if (modal) {
+        // Loop through every clickable image and attach the modal logic
+        clickableImages.forEach(img => {
+            img.style.cursor = "pointer"; // Make it look clickable
+            
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src; 
+                // Dynamically pull the caption from the image's alt text
+                captionText.innerHTML = this.alt || "Shazad Hassan Babakr"; 
+                document.body.style.overflow = "hidden"; 
+            }
+        });
 
-    // When the user clicks anywhere outside of the image, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
+        // Close the modal when clicking the 'X'
+        if (span) {
+            span.onclick = function() { 
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; 
+            }
+        }
+
+        // Close the modal when clicking anywhere in the black background area
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
         }
     }
 });
