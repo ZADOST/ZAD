@@ -1,3 +1,23 @@
+/* Creates a global starry background covering the whole screen */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -1; 
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #e0e0e0, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #d4d4d4, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #e0e0e0, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 3s infinite alternate;
+    opacity: 0.4;
+}
+
 /* --- NEW STYLES: Buttons, Typography & Layout --- */
 .kstiu-role {
     color: #ffffff;
@@ -206,15 +226,20 @@ a:hover {
 /* =========================================
    HERO SECTION & PROFILE IMAGE
    ========================================= */
+/* =========================================
+   HERO SECTION & PROFILE IMAGE
+   ========================================= */
 .hero {
     position: relative;
     text-align: center;
     padding: 100px 20px;
-    /* Starry Night Background Link */
     background-image: url('img/starry-night.jpg'); 
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Creates a cool 3D parallax effect when scrolling */
+    
+    /* Removed 'fixed' and shifted the focus up to perfectly frame the sky/swirls */
+    background-position: center 30%; 
+    background-attachment: scroll; 
+    
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -306,8 +331,10 @@ a:hover {
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: #aaaaaa;
+    font-size: 1.3rem; /* Increased size */
+    color: #ffffff; /* Bright white */
+    font-weight: 600; /* Bolder text */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Heavy drop shadow for readability */
     max-width: 600px;
     margin: 0 auto;
 }
@@ -335,11 +362,11 @@ section, footer {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
-/* Zooms the section toward the user on hover */
+/* Zooms the section 2x toward the user on hover */
 section:hover, footer:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 173, 181, 0.15);
-    z-index: 10; /* Ensures the zoomed section overlaps surrounding elements cleanly */
+    transform: scale(2); /* Doubles the size */
+    box-shadow: 0 20px 60px rgba(0, 173, 181, 0.3);
+    z-index: 100; /* Ensures the massive section sits on top of everything else */
 }
 
 /* Experience Cards */
