@@ -349,6 +349,9 @@ a:hover {
 /* =========================================
    LAYOUT SECTIONS
    ========================================= */
+/* =========================================
+   LAYOUT SECTIONS (Hover & Return Animation)
+   ========================================= */
 section, footer {
     max-width: 850px;
     margin: 40px auto;
@@ -358,17 +361,16 @@ section, footer {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    /* Smooth transition for the hover zoom */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    /* This smoothly handles BOTH scaling up and returning to normal */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Zooms the section 2x toward the user on hover */
+/* The elegant upscale effect */
 section:hover, footer:hover {
-    transform: scale(2); /* Doubles the size */
-    box-shadow: 0 20px 60px rgba(0, 173, 181, 0.3);
-    z-index: 100; /* Ensures the massive section sits on top of everything else */
+    transform: scale(1.03); /* A professional 3% upscale, not 200% */
+    box-shadow: 0 15px 35px rgba(0, 173, 181, 0.2);
+    z-index: 10; 
 }
-
 /* Experience Cards */
 .experience-card {
     background: #252525;
@@ -645,8 +647,24 @@ li {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .hero h1 { font-size: 2.2rem; }
-    .hero p { font-size: 1rem; }
+    /* =========================================
+   HERO TYPOGRAPHY (Visibility Fix)
+   ========================================= */
+.hero h1 {
+    font-size: 3rem;
+    color: #00adb5;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Makes the title pop */
+}
+
+.hero p {
+    font-size: 1.3rem; 
+    color: #ffffff; 
+    font-weight: 600; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); 
+    max-width: 600px;
+    margin: 0 auto;
+}
     section, footer { margin: 20px 10px; padding: 20px; }
     .skills-grid { grid-template-columns: 1fr; }
     .contact-links { flex-direction: column; gap: 10px; }
